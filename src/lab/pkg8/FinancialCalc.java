@@ -1,26 +1,24 @@
-
 package lab.pkg8;
+
 /* *
  * @author Shahab
  */
 public class FinancialCalc {
 
     public static void main(String[] args) {
-        double principal = 1000.00;
-        double interestRate = 0.035;
-        int numOfYears = 7;
-        
-        double finalValue = 0;
-        
-        finalValue = principal * Math.pow(1+interestRate,numOfYears);
-        
-        System.out.println("Investing $"+principal+
-                " at an interest of "+(interestRate*1000)/10+"%"+
-                " for "+numOfYears +" years will have a final"
-                        + " worth of $"+computeFinalValue(principal,interestRate,numOfYears));
+        double principal = 0.00;
+        double interestRate = 0.05;
+        int numOfYears = 4;
+        double finalValue = 4000;
+
+        principal = computerPrincipal(finalValue,interestRate,numOfYears);
+
+        System.out.println("The amount of money you should invest today "
+                + "(at an interest of 5%) to have a total amount of $1000 at the end of 3 years - "+principal);
     }
-public static double computeFinalValue(double principal,double interestRate,int numOfYears){
-       double finalValue = principal * Math.pow((1+interestRate), numOfYears);
-       return finalValue;
-   }
+
+     public static double computerPrincipal(double finalValue, double interestRate, double numOfYears) {
+        return finalValue / Math.pow((1 + interestRate), numOfYears);
+    }
+    
 }
